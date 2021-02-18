@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project AppMob</string>
+    <string name="TxtWelcome">Welcome</string>
+    <string name="TxtDay">Your day</string>
+    <string name="TitleButtomNavigation1">Home</string>
+    <string name="TitleButtomNavigation2">Calendar</string>
+    <string name="TitleButtomNavigation3">More activity</string>
+    <string name="TitleButtomNavigation4">User</string>
+    <string name="TitleButtomNavigation5">Setting</string>
+</resources>
