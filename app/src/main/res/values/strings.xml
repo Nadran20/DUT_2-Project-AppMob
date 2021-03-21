@@ -7,4 +7,23 @@
     <string name="TitleButtomNavigation3">More activity</string>
     <string name="TitleButtomNavigation4">User</string>
     <string name="TitleButtomNavigation5">Setting</string>
+    <string name="title_activity_more">MoreActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="textNameActivité">Nom de l\'activité</string>
+    <string name="textLieu">Lieu de l\'activité</string>
+    <string name="textDescription">Description de l\'activité</string>
+    <string name="BoutonValider">Valider</string>
+    <string name="textProfil">Profil</string>
+    <string name="textInformation">Vos informations</string>
+    <string name="textPrenom">Prénom</string>
+    <string name="textNom">Nom</string>
+    <string name="textMail">email</string>
+    <string name="TextFacultatif">Informations facultatives</string>
 </resources>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projectappmob">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectAppMob">
+        <activity android:name=".SettingActivity"></activity>
+        <activity
+            android:name=".MoreActivity"
+            android:label="@string/title_activity_more"
+            android:theme="@style/Theme.ProjectAppMob.NoActionBar" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".UserActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

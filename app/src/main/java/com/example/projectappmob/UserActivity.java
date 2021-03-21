@@ -1,6 +1,7 @@
 package com.example.projectappmob;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,61 +11,63 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class MainActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         String TAG = "User";
 
         Intent intent = getIntent();
+        String nom ="";
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
+        db.collection("user").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                for(DocumentSnapshot snapshot : value){
+                    //recup mes données
+                }
+            }
+        });
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.BottomNavBar);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(0);
+        MenuItem menuItem = menu.getItem(3);
         menuItem.setChecked(true);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_home:
+                        Intent intent1 = new Intent(UserActivity.this, MainActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.action_calendar:
-                        Intent intent2 = new Intent(MainActivity.this, CalendarActivity.class);
+                        Intent intent2 = new Intent(UserActivity.this, CalendarActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.action_more:
-                        Intent intent3 = new Intent(MainActivity.this, MoreActivity.class);
+                        Intent intent3 = new Intent(UserActivity.this, MoreActivity.class);
                         startActivity(intent3);
                         break;
                     case R.id.action_user:
-                        Intent intent4 = new Intent(MainActivity.this, UserActivity.class);
-                        startActivity(intent4);
                         break;
                 }
                 return false;
             }
         });
-
-        //tjs dans le onCCreate
-
     }
 }
