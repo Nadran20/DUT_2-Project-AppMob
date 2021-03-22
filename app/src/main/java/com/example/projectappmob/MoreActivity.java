@@ -76,6 +76,8 @@ public class MoreActivity extends AppCompatActivity {
         editTextLieu.setText("");
         EditText editTextDesc = (EditText) findViewById(R.id.InputDescription);
         editTextDesc.setText("");
+
+        Log.d(TAG, "On passe ici ma zoulette");
     }
 
     private void createActivity() {
@@ -92,7 +94,9 @@ public class MoreActivity extends AppCompatActivity {
         data.put("Lieu", Lieu);
         data.put("Description", Description);
 
-        db.collection("user").document("GdGK7N9JKJBbXo4Jhj34").collection("Activité")
+        Log.d(TAG, "On passe ici ma couille");
+
+        db.collection("Users").document("drnew7QAOKUdFqiebSxq").collection("Activités")
                 .add(data)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
 

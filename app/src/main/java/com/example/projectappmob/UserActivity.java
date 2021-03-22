@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,11 +35,16 @@ public class UserActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String nom ="";
 
-        db.collection("user").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        db.collection("Users").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 for(DocumentSnapshot snapshot : value){
-                    //recup mes données
+                    TextView TextNom = findViewById(R.id.textNom);
+                    TextNom.setText(snapshot.getString("Nom"));
+                    TextView TextPrénom = findViewById(R.id.textPrénom);
+                    TextPrénom.setText(snapshot.getString("Prénom"));
+                    TextView TextEmail = findViewById(R.id.textMail);
+                    TextEmail.setText(snapshot.getString("mail"));
                 }
             }
         });
