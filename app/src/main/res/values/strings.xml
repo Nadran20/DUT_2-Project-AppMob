@@ -26,4 +26,6 @@
     <string name="textNom">Nom</string>
     <string name="textMail">email</string>
     <string name="TextFacultatif">Informations facultatives</string>
+    <string name="ModifBouton">Modifier</string>
+    <string name="VideHint">Ne pas remplir si aucune modification</string>
 </resources>

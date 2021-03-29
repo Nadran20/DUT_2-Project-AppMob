@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectAppMob">
+        <activity android:name=".ModifActivity"></activity>
         <activity
             android:name=".MoreActivity"
             android:label="@string/title_activity_more"

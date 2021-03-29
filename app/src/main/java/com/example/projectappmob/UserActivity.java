@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -75,5 +76,10 @@ public class UserActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void ModifAct(View view) {
+        Intent intent = new Intent(this, ModifActivity.class);
+        startActivity(intent);
     }
 }
